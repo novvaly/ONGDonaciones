@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="AccesoDatos/AccesoDatos.csproj" />
+  <Project Path="Negocios/Negocios.csproj" />
+  <Project Path="ONGDonaciones/Presentacion.csproj" />
+</Solution>
