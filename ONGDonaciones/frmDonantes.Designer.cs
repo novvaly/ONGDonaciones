@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             pnlEncabezado = new Panel();
             lblTitulo = new Label();
             picLogo = new PictureBox();
@@ -66,6 +67,7 @@
             pnlEncabezado.Name = "pnlEncabezado";
             pnlEncabezado.Size = new Size(1020, 60);
             pnlEncabezado.TabIndex = 0;
+            pnlEncabezado.Paint += pnlEncabezado_Paint;
             // 
             // lblTitulo
             // 
@@ -296,16 +298,23 @@
             dgvDonante.AllowUserToAddRows = false;
             dgvDonante.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDonante.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dgvDonante.DefaultCellStyle = dataGridViewCellStyle1;
             dgvDonante.Location = new Point(49, 318);
             dgvDonante.Name = "dgvDonante";
             dgvDonante.ReadOnly = true;
             dgvDonante.RowHeadersWidth = 51;
             dgvDonante.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-          
             dgvDonante.Size = new Size(897, 193);
             dgvDonante.TabIndex = 8;
             dgvDonante.CellClick += dgvDonantes_CellClick;
-
+            dgvDonante.CellContentClick += dgvDonante_CellContentClick;
             // 
             // frmDonantes
             // 

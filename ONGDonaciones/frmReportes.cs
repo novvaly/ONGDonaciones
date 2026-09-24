@@ -242,14 +242,28 @@ namespace Presentacion
 
         }
 
-        private void btnCertificados_Click(object sender, EventArgs e)
+        
+            private void btnCertificados_Click(object sender, EventArgs e)
         {
+            // Verifica que haya una fila seleccionada
             if (dgvReportes.CurrentRow == null)
             {
-                MessageBox.Show("Seleccione una donación.");
+                MessageBox.Show("Seleccione una donación.",
+                    "Aviso",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
 
+            // Solo las donaciones pueden generar certificados
+            if (cmbTipoReporte.Text != "Donaciones")
+            {
+                MessageBox.Show("Para generar un certificado debe seleccionar el reporte de Donaciones.",
+                    "Operación no permitida",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                return;
+            }
             int idDonacion = Convert.ToInt32(dgvReportes.CurrentRow.Cells["IdDonacion"].Value);
             int idDonante = Convert.ToInt32(dgvReportes.CurrentRow.Cells["IdDonante"].Value);
             int idProyecto = Convert.ToInt32(dgvReportes.CurrentRow.Cells["IdProyecto"].Value);

@@ -43,22 +43,4 @@
         //TODO: 1 Metodo normal
         public string RegistrarDonacion()
         {
-            if (TipoDonacion == "Efectivo")
-            {
-                return $"Donación de RD${Monto:N2} registrada por {Donante.Nombre} el {Fecha:dd/MM/yyyy}";
-            }
-
-            return $"Donación en especie ({Bien}) registrada por {Donante.Nombre} el {Fecha:dd/MM/yyyy}";
-        }
-
-        public override string ToString()
-        {
-            if (TipoDonacion == "Efectivo")
-            {
-                return $"{Donante.Nombre} - RD${Monto:N2} - {Fecha:dd/MM/yyyy}";
-            }
-
-            return $"{Donante.Nombre} - En especie: {Bien} - {Fecha:dd/MM/yyyy}";
-        }
-    }
 }

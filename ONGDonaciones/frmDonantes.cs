@@ -13,6 +13,10 @@ namespace Presentacion
         public frmDonantes()
         {
             InitializeComponent();
+            dgvDonante.DefaultCellStyle.ForeColor = Color.Black;
+            dgvDonante.DefaultCellStyle.BackColor = Color.White;
+            dgvDonante.RowsDefaultCellStyle.ForeColor = Color.Black;
+            dgvDonante.RowsDefaultCellStyle.BackColor = Color.White;
             CargarDonantes();
         }
 
@@ -254,7 +258,7 @@ namespace Presentacion
         // =====================================================
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-         
+
             if (idDonanteSeleccionado == 0)
             {
                 MostrarAdvertencia("Seleccione un donante para eliminar.");
@@ -272,7 +276,7 @@ namespace Presentacion
 
             try
             {
-                
+
                 gestion.EliminarDonante(idDonanteSeleccionado);
 
                 MostrarExito("Donante eliminado correctamente.");
@@ -291,7 +295,7 @@ namespace Presentacion
         // =====================================================
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-           
+
             dgvDonante.DataSource = gestion.BuscarDonantes(txtNombre.Text.Trim());
         }
 
@@ -325,6 +329,16 @@ namespace Presentacion
         }
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlEncabezado_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvDonante_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

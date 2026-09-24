@@ -47,5 +47,14 @@
         {
             return $"{NombreProyecto} ({TipoProyecto})";
         }
+
+        
+        //TODO: Destructor
+        // Se ejecuta cuando el objeto Proyecto es destruido por el recolector de basura
+        // En este proyecto representa el cierre del proyecto y la generación del reporte final de transparencia.
+        ~Proyecto()
+        {
+            Console.WriteLine("Reporte final de transparencia generado.");
+        }
     }
 }
