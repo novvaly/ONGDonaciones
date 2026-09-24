@@ -12,7 +12,7 @@
         public int CantidadBeneficios { get; set; }
         public DateTime FechaAsignacion { get; set; }
 
-        // Constructor 
+        // Constructorrr
        
         public Beneficiario(
             string nombre,
